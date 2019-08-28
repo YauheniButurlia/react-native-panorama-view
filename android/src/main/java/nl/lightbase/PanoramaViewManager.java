@@ -149,6 +149,16 @@ public class PanoramaViewManager extends SimpleViewManager<VrPanoramaView> {
         view.setTouchTrackingEnabled(enableTouchTracking);
     }
 
+    @ReactProp(name = "enablePureTouchTracking")
+    public void setEnablePureTouchTracking(VrPanoramaView view, boolean enablePureTouchTracking) {
+        view.setPureTouchTracking(enablePureTouchTracking);
+    }
+
+    @ReactProp(name = "enableFullscreenButton")
+    public void setEnableFullscreenButton(VrPanoramaView view, boolean enableFullscreenButton) {
+        view.setFullscreenButtonEnabled(enableFullscreenButton);
+    }
+
     class ImageLoaderTask extends AsyncTask<Pair<URL, VrPanoramaView.Options>, Void, Boolean> {
         protected Boolean doInBackground(Pair<URL, VrPanoramaView.Options>... fileInformation) {
             final URL imageUrl = fileInformation[0].first;
